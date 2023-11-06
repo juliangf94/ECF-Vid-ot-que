@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    
+       
+    <title>ECF Vidéotèque</title>
+</head> 
+<body>
+    <!--HEADER-->
+    <header>
+        <nav class="navbar navbar-expand-lg manav">
+            <div class="container-fluid">
+                 <h1 >Vidéotèque</h1> 
+                <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation" >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-nav">
+                        <li>
+                            <a class="nav-link bd" href="index.html">Accueil</a>
+                        </li>
+                        <li>
+                            <a class="nav-link bd" href="rechercher.html">Rechercher</a>
+                        </li>
+                    </div>
+                </div>  
+            </div>
+        </nav>       
+    </header>
+    <!--MAIN CONTENT-->
+    <main >
+        
+        <div class="d-flex flex-column mb-3 divindex">
+            <div class="p-2 t1">
+                <h2>Liste des films</h2> 
+            </div>
+            
+            <div class="body-box">
+                <button id="addBtn" class="btn btn-primary">Ajouter</button>
+            </div>
+                
+            <!-----Form information----->
+            <div class="form-popup" id="popUpForm">
+                <form class="form-container" id="movieForm" autocomplete="off"> 
+                    <div id="error" class="body-box">
+                        <ul id="errorTitle" class="mt-2"></ul>
+                        <ul id="errorYear" class="mt-2"></ul>
+                        <ul id="errorDirector" class="mt-2"></ul>
+                    </div>     
+                    <ul id="succès" class="mt-5"></ul>     
+                    <input type="text" id="inputTitre" placeholder="Écrire le titre">
+                    <input type ="number" id="inputAnnée" placeholder="Indiquer l'année" >
+                    <input type="text" id="inputRéalisateur" placeholder="Écrire le réalisateur" >
+                    <button   id="submitBtn" type="submit" value="Submit" class="btn btn-primary" >Sauvegarder</button>                  
+                </form>
+            </div>
+                        
+            <form>
+                <!-----Dropdown----->
+                <div class="dropdown">
+                    <div class="p-2 t2">
+                        <label  for="sortSelect">Filter by:</label>
+                        <select id="sortSelect" >
+                            <option value="0">Select</option>
+                            <option value="title">Title</option>
+                            <option value="years">Years</option>
+                        </select>
+                    </div>    
+                </div>
+                <!-----Table----->
+                <div class="container">     
+                    <table id="myTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Years</th>
+                                <th>Authors</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyTable">
+
+                        </tbody>
+                    </table>
+                </div>                  
+            </form>       
+        </div>   
+    </main> 
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
